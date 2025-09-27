@@ -538,10 +538,10 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(25, 35, 55, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -565,12 +565,12 @@ img {
 .logo-text {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #1d1d1f;
+    color: white;
 }
 
 .logo-subtitle {
     font-size: 0.75rem;
-    color: #86868b;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
     margin-top: -4px;
 }
@@ -584,14 +584,14 @@ img {
 .nav-link {
     font-size: 0.9rem;
     font-weight: 400;
-    color: #1d1d1f;
+    color: white;
     padding: 8px 0;
     position: relative;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #1e50a2;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-link::after {
@@ -619,7 +619,7 @@ img {
 .nav-toggle span {
     width: 24px;
     height: 2px;
-    background-color: #1d1d1f;
+    background-color: white;
     transition: all 0.3s ease;
 }
 
