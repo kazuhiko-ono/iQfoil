@@ -739,7 +739,7 @@
 @media (prefers-color-scheme: dark) {
     /* Navigation in dark mode */
     .navbar {
-        background: rgba(29, 29, 31, 0.9);
+        background: rgba(30, 80, 162, 0.95);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
