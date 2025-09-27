@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Text reveal animation
     function initTextRevealAnimations() {
-        const textElements = document.querySelectorAll('.hero-title, .section-title, .achievement-title');
+        const textElements = document.querySelectorAll('.section-title, .achievement-title');
 
         textElements.forEach(element => {
             const text = element.textContent;
