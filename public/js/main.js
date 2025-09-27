@@ -194,34 +194,135 @@ document.addEventListener('DOMContentLoaded', function() {
         elementsToObserve.forEach(el => observer.observe(el));
     }
 
-    // Contact form handling
+    // Contact form handling with Netlify Forms support
     function initContactForm() {
-        if (!contactForm) return;
+        const form = document.getElementById('contact-form');
+        if (!form) return;
 
-        contactForm.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('.submit-button');
-            const originalText = submitButton.textContent;
+            const submitBtn = document.getElementById('submit-btn');
+            const buttonText = submitBtn.querySelector('.button-text');
+            const buttonLoader = submitBtn.querySelector('.button-loader');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
 
-            // Show loading state
-            submitButton.textContent = '送信中...';
-            submitButton.disabled = true;
+            try {
+                // Validate form elements exist and have correct types
+                const requiredFields = ['company', 'name', 'email', 'interest'];
+                for (const fieldName of requiredFields) {
+                    const field = form.elements[fieldName];
+                    if (!field) {
+                        throw new Error(`必須フィールド "${fieldName}" が見つかりません`);
+                    }
+                    if (!field.value.trim()) {
+                        field.focus();
+                        throw new Error(`${field.labels[0].textContent.replace(' *', '')}を入力してください`);
+                    }
+                }
 
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                // Show success message
-                showNotification('お問い合わせを受け付けました。ありがとうございます。', 'success');
+                // Email validation
+                const emailField = form.elements['email'];
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailField.value)) {
+                    emailField.focus();
+                    throw new Error('有効なメールアドレスを入力してください');
+                }
 
-                // Reset form
-                this.reset();
+                // Check honeypot field (spam protection)
+                const botField = form.elements['bot-field'];
+                if (botField && botField.value) {
+                    console.warn('Bot detection triggered');
+                    return false;
+                }
 
-                // Reset button
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 2000);
+                // Show loading state
+                submitBtn.disabled = true;
+                buttonText.style.display = 'none';
+                buttonLoader.style.display = 'inline';
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'none';
+
+                // Create FormData and submit to Netlify
+                const formData = new FormData(form);
+
+                // Submit to Netlify Forms endpoint
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    // Success
+                    form.reset();
+                    successMsg.style.display = 'block';
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                    // Track success event
+                    if (window.trackEvent) {
+                        window.trackEvent('Contact', 'Form Submit', 'Success');
+                    }
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error(`送信に失敗しました (${response.status})`);
+                }
+
+            } catch (error) {
+                // Error handling
+                console.error('Form submission error:', error);
+                errorMsg.textContent = error.message || '送信中にエラーが発生しました。しばらく経ってから再度お試しください。';
+                errorMsg.style.display = 'block';
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // Track error event
+                if (window.trackEvent) {
+                    window.trackEvent('Contact', 'Form Error', error.message);
+                }
+
+                // Hide error message after 5 seconds
+                setTimeout(() => {
+                    errorMsg.style.display = 'none';
+                }, 5000);
+
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                buttonText.style.display = 'inline';
+                buttonLoader.style.display = 'none';
+            }
         });
+
+        // Real-time validation feedback
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+
+            input.addEventListener('input', function() {
+                if (this.classList.contains('error')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        function validateField(field) {
+            const value = field.value.trim();
+            const isValid = value !== '';
+
+            if (field.type === 'email' && value) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                field.classList.toggle('error', !emailPattern.test(value));
+            } else {
+                field.classList.toggle('error', !isValid);
+            }
+        }
     }
 
     // Notification system

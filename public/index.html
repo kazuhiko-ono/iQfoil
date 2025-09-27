@@ -1066,22 +1066,32 @@
                 </div>
                 <div class="contact-form-container">
                     <h3 class="form-title">お問い合わせフォーム</h3>
-                    <form class="contact-form">
+                    <form name="contact" id="contact-form" class="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                        <!-- Netlify Forms Hidden Field -->
+                        <input type="hidden" name="form-name" value="contact">
+
+                        <!-- Honeypot Field for Spam Protection -->
+                        <div class="hidden" style="display:none !important;">
+                            <label>Don't fill this out if you're human:
+                                <input name="bot-field" tabindex="-1" autocomplete="off">
+                            </label>
+                        </div>
+
                         <div class="form-group">
-                            <label for="company">会社名</label>
-                            <input type="text" id="company" name="company" required>
+                            <label for="company">会社名 <span class="required">*</span></label>
+                            <input type="text" id="company" name="company" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="name">お名前</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name">お名前 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="email">メールアドレス</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">メールアドレス <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="interest">ご興味のある内容</label>
-                            <select id="interest" name="interest" required>
+                            <label for="interest">ご興味のある内容 <span class="required">*</span></label>
+                            <select id="interest" name="interest" required aria-required="true">
                                 <option value="">選択してください</option>
                                 <option value="naming">ネーミングライツ</option>
                                 <option value="promotion">プロモーション活動</option>
@@ -1091,9 +1101,28 @@
                         </div>
                         <div class="form-group">
                             <label for="message">メッセージ</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
+                            <textarea id="message" name="message" rows="4" aria-describedby="message-help"></textarea>
+                            <small id="message-help" class="form-help">任意：ご要望やご質問などございましたらご記入ください</small>
                         </div>
-                        <button type="submit" class="submit-button">お問い合わせを送信</button>
+
+                        <!-- Netlify reCAPTCHA -->
+                        <div class="form-group">
+                            <div data-netlify-recaptcha="true"></div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-button" id="submit-btn">
+                            <span class="button-text">お問い合わせを送信</span>
+                            <span class="button-loader" style="display:none;">送信中...</span>
+                        </button>
+
+                        <!-- Success/Error Messages -->
+                        <div id="form-success" class="form-message success-message" style="display:none;">
+                            お問い合わせありがとうございます。送信が完了しました。
+                        </div>
+                        <div id="form-error" class="form-message error-message" style="display:none;">
+                            送信中にエラーが発生しました。しばらく経ってから再度お試しください。
+                        </div>
                     </form>
                 </div>
             </div>
