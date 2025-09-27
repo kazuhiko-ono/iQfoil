@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'SF Pro Display', 'Inter', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
     line-height: 1.6;
     color: #1d1d1f;
     background-color: #ffffff;
@@ -121,8 +121,14 @@ img {
 .performance-factors {
     margin: 40px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .performance-factors {
+        grid-template-columns: 1fr;
+    }
 }
 
 .factor-item {
@@ -140,7 +146,7 @@ img {
 }
 
 .factor-item:first-child {
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #1e50a2;
 }
 
 .factor-item:nth-child(2) {
@@ -174,7 +180,7 @@ img {
 .international-section {
     margin: 40px 0;
     padding: 24px;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #1e50a2 0%, #2563eb 100%);
     border-radius: 16px;
     color: white;
     text-align: center;
@@ -387,7 +393,7 @@ img {
     padding: 16px;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #1e50a2;
 }
 
 .attention-point h5 {
@@ -585,7 +591,7 @@ img {
 }
 
 .nav-link:hover {
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .nav-link::after {
@@ -595,7 +601,7 @@ img {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #0071e3;
+    background-color: #1e50a2;
     transition: width 0.3s ease;
 }
 
@@ -652,9 +658,9 @@ img {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(0, 113, 227, 0.25) 0%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(30, 80, 162, 0.3) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
     );
     z-index: -1;
 }
@@ -668,15 +674,15 @@ img {
 }
 
 .hero-title {
-    font-size: clamp(3.2rem, 8vw, 5.5rem);
-    font-weight: 700;
-    margin-bottom: 24px;
+    font-family: 'SF Pro Display', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    font-size: clamp(3rem, 7vw, 4.8rem);
+    font-weight: 600;
+    margin-bottom: 20px;
     text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.8),
-        0 4px 8px rgba(0, 0, 0, 0.6),
-        0 8px 16px rgba(0, 0, 0, 0.4);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 2px 6px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1.2s ease-out 0.3s forwards;
@@ -684,21 +690,21 @@ img {
 
 .hero-title .emphasis {
     color: white;
+    font-size: 0.85em;
+    font-weight: 400;
     text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.8),
-        0 4px 8px rgba(0, 0, 0, 0.6),
-        0 8px 16px rgba(0, 0, 0, 0.4);
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 2px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.02em;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin: 32px 0;
-    text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.9),
-        0 4px 12px rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 24px 0 32px 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
     text-align: center;
 }
 
@@ -711,16 +717,16 @@ img {
 }
 
 .credential {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta {
@@ -743,9 +749,9 @@ img {
 }
 
 .cta-button.primary {
-    background: #0071e3;
+    background: #1e50a2;
     color: white;
-    border-color: #0071e3;
+    border-color: #1e50a2;
 }
 
 .cta-button.primary:hover {
@@ -904,7 +910,7 @@ img {
 }
 
 .achievement-card.featured {
-    background: linear-gradient(135deg, #0071e3, #00c7f7);
+    background: linear-gradient(135deg, #1e50a2, #2563eb);
     color: white;
     grid-column: span 2;
 }
@@ -925,7 +931,7 @@ img {
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 12px;
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .achievement-card.featured .achievement-detail {
@@ -981,7 +987,7 @@ img {
 
 .olympic-result {
     font-size: 0.9rem;
-    color: #0071e3;
+    color: #1e50a2;
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -1009,8 +1015,14 @@ img {
 
 .achievements-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .achievements-images {
+        grid-template-columns: 1fr;
+    }
 }
 
 .achievement-image-item {
@@ -1131,7 +1143,7 @@ img {
     font-size: 1.5rem;
     margin-bottom: 24px;
     text-align: center;
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .comparison-table {
@@ -1148,7 +1160,7 @@ img {
 }
 
 .comparison-row.header {
-    background: linear-gradient(135deg, #0071e3, #00c7f7);
+    background: linear-gradient(135deg, #1e50a2, #2563eb);
     color: white;
     font-weight: 600;
 }
@@ -1205,7 +1217,7 @@ img {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .location-description {
@@ -1260,7 +1272,7 @@ img {
 }
 
 .value-card.primary {
-    background: linear-gradient(135deg, #0071e3, #00c7f7);
+    background: linear-gradient(135deg, #1e50a2, #2563eb);
     color: white;
 }
 
@@ -1298,7 +1310,7 @@ img {
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 20px;
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .vision-introduction {
@@ -1330,7 +1342,7 @@ img {
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .concept-subtitle {
@@ -1385,7 +1397,7 @@ img {
 }
 
 .vision-impact {
-    background: linear-gradient(135deg, #0071e3, #00c7f7);
+    background: linear-gradient(135deg, #1e50a2, #2563eb);
     color: white;
     padding: 32px;
     border-radius: 16px;
@@ -1418,7 +1430,7 @@ img {
     font-weight: 700;
     margin-bottom: 8px;
     background: rgba(255, 255, 255, 0.9);
-    color: #0071e3;
+    color: #1e50a2;
     border-radius: 8px;
     padding: 8px;
     display: inline-block;
@@ -1462,7 +1474,7 @@ img {
 }
 
 .package-card.premium {
-    background: linear-gradient(135deg, #0071e3, #00c7f7);
+    background: linear-gradient(135deg, #1e50a2, #2563eb);
     color: white;
     border: none;
 }
@@ -1509,7 +1521,7 @@ img {
     content: '✓';
     position: absolute;
     left: 16px;
-    color: #0071e3;
+    color: #1e50a2;
     font-weight: bold;
 }
 
@@ -1560,7 +1572,7 @@ img {
 
 /* Gallery Section */
 .gallery {
-    background: #000000;
+    background: linear-gradient(135deg, #1e50a2 0%, #2563eb 100%);
     color: white;
 }
 
@@ -1718,7 +1730,7 @@ img {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #0071e3;
+    border-color: #1e50a2;
     box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
 }
 
@@ -1730,7 +1742,7 @@ img {
 .submit-button {
     width: 100%;
     padding: 14px;
-    background: #0071e3;
+    background: #1e50a2;
     color: white;
     border: none;
     border-radius: 8px;
@@ -1747,7 +1759,7 @@ img {
 
 /* Footer */
 .footer {
-    background: #1d1d1f;
+    background: linear-gradient(135deg, #1e50a2 0%, #2563eb 100%);
     color: white;
     padding: 60px 0 32px;
 }
@@ -1816,7 +1828,7 @@ img {
 }
 
 .social-link:hover {
-    color: #0071e3;
+    color: #1e50a2;
 }
 
 .footer-bottom {
@@ -1824,7 +1836,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding-top: 32px;
-    border-top: 1px solid #424245;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .copyright,
