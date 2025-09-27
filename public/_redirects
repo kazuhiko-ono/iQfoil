@@ -1,0 +1,41 @@
+# Netlify redirects file
+
+# Redirect old URLs to new sections
+/home              /                  301
+/profile           /#profile          301
+/achievements      /#achievements     301
+/sport             /#sport            301
+/partnership       /#partnership     301
+/contact           /#contact          301
+
+# Social media redirects (for future implementation)
+/instagram         https://instagram.com/sunaga_yuki    302
+/twitter           https://twitter.com/sunaga_yuki      302
+/facebook          https://facebook.com/sunaga.yuki     302
+
+# Sponsor information shortlinks
+/sponsor           /#partnership      301
+/sponsorship       /#partnership      301
+/partner           /#partnership      301
+
+# Media kit and press resources (for future implementation)
+/press             /media-kit.pdf     302
+/media             /media-kit.pdf     302
+
+# Japanese language variations
+/プロフィール         /#profile          301
+/実績              /#achievements     301
+/競技について        /#sport            301
+/パートナーシップ     /#partnership      301
+/お問い合わせ        /#contact          301
+
+# Handle common misspellings
+/sunga             /                  301
+/sunaga            /                  301
+/yuki-sunaga       /                  301
+
+# Force HTTPS redirect
+http://sunaga-yuki.netlify.app/*    https://sunaga-yuki.netlify.app/:splat  301!
+
+# SPA fallback - must be last
+/*                 /index.html        200

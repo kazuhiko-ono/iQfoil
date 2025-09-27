@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sunaga-yuki.netlify.app/sitemap.xml
+
+# Disallow sensitive areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow search engines to crawl images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Optimize crawl budget
+Crawl-delay: 1

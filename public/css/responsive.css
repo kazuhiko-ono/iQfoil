@@ -1,0 +1,847 @@
+/* Responsive Design for Mobile and Tablet */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* Navigation */
+    .nav-menu {
+        gap: 24px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        gap: 12px;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* Profile Section */
+    .profile-content {
+        gap: 40px;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+    }
+
+    /* Achievements */
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .achievement-card.featured {
+        grid-column: span 1;
+    }
+
+    .olympic-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .olympic-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .olympic-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    /* Sport Section */
+    .sport-overview {
+        gap: 40px;
+    }
+
+    .training-locations {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .class-comparison {
+        padding: 24px;
+    }
+
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+
+    .comparison-cell {
+        padding: 8px 12px;
+    }
+
+    /* Partnership Section */
+    .value-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .alignment-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .unique-benefits {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 150px;
+        gap: 12px;
+    }
+
+    .gallery-item.large {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .gallery-item:not(.large) {
+        grid-column: span 3;
+    }
+
+    /* Contact */
+    .contact-content {
+        gap: 40px;
+    }
+
+    .footer-content {
+        gap: 40px;
+    }
+
+    .footer-links {
+        gap: 40px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 3.5vw, 3rem);
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .hero-credentials {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    .credential {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Profile Section */
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .detail-label {
+        min-width: auto;
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    /* Achievements */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .achievement-card {
+        padding: 24px 20px;
+    }
+
+    .olympic-showcase {
+        gap: 20px;
+    }
+
+    .olympic-item {
+        padding: 0;
+    }
+
+    .olympic-info {
+        padding: 20px;
+    }
+
+    /* Sport Section */
+    .sport-overview {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .sport-visual {
+        order: -1;
+    }
+
+    .sport-features {
+        gap: 16px;
+    }
+
+    .feature-item {
+        padding: 16px;
+    }
+
+    .training-info {
+        padding: 24px;
+    }
+
+    .class-comparison {
+        padding: 20px;
+    }
+
+    .comparison-title {
+        font-size: 1.3rem;
+    }
+
+    .comparison-row {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .comparison-cell {
+        padding: 12px 16px;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e7;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .comparison-cell:last-child {
+        border-bottom: none;
+    }
+
+    .comparison-row:not(.header) .comparison-cell:first-child {
+        font-weight: 600;
+        background: #f0f8ff;
+        color: #0071e3;
+    }
+
+    /* Partnership Section */
+    .value-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .value-card {
+        padding: 24px 20px;
+    }
+
+    .vision-alignment {
+        padding: 24px;
+    }
+
+    .alignment-items {
+        gap: 24px;
+    }
+
+    .alignment-item {
+        padding: 20px;
+    }
+
+    .packages-grid {
+        gap: 20px;
+    }
+
+    .package-card {
+        padding: 24px;
+    }
+
+    .unique-value {
+        padding: 24px;
+    }
+
+    .unique-benefits {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        gap: 8px;
+    }
+
+    .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-item:not(.large) {
+        grid-column: span 1;
+    }
+
+    /* Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .contact-form {
+        padding: 24px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 24px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 32px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 12px;
+        height: 56px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.7rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 0 12px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-credentials {
+        margin-bottom: 24px;
+    }
+
+    .credential {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    /* Profile Section */
+    .profile-name {
+        font-size: 1.6rem;
+    }
+
+    .story-title {
+        font-size: 1.2rem;
+    }
+
+    /* Achievements */
+    .achievement-card {
+        padding: 20px 16px;
+    }
+
+    .achievement-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .achievement-title {
+        font-size: 1.1rem;
+    }
+
+    .olympic-info {
+        padding: 16px;
+    }
+
+    /* Sport Section */
+    .sport-title {
+        font-size: 1.5rem;
+    }
+
+    .sport-description {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        padding: 12px;
+    }
+
+    .training-info {
+        padding: 20px;
+    }
+
+    /* Partnership Section */
+    .value-title {
+        font-size: 1.6rem;
+    }
+
+    .alignment-title,
+    .packages-title,
+    .unique-title {
+        font-size: 1.5rem;
+    }
+
+    .vision-alignment {
+        padding: 20px;
+    }
+
+    .package-card {
+        padding: 20px;
+    }
+
+    .unique-value {
+        padding: 20px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+        gap: 8px;
+    }
+
+    .gallery-item.large,
+    .gallery-item:not(.large) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* Contact */
+    .contact-title,
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-item {
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+    }
+
+    .submit-button {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 32px 0 20px;
+    }
+
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-section-title {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+/* Very Small Mobile Phones */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .section {
+        padding: 32px 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .cta-button {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .achievement-card,
+    .value-card,
+    .package-card {
+        padding: 16px 12px;
+    }
+
+    .contact-form {
+        padding: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-credentials {
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        grid-auto-rows: 120px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-image,
+    .profile-image,
+    .sport-image,
+    .olympic-image,
+    .gallery-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    /* Navigation in dark mode */
+    .navbar {
+        background: rgba(29, 29, 31, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-toggle span {
+        background-color: #f5f5f7;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scroll-arrow {
+        animation: none;
+    }
+
+    .gallery-item:hover .gallery-image,
+    .achievement-card:hover,
+    .value-card:hover,
+    .cta-button:hover {
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .scroll-indicator,
+    .hero-cta,
+    .contact-form,
+    .footer {
+        display: none !important;
+    }
+
+    .hero {
+        height: auto;
+        min-height: auto;
+        page-break-after: always;
+    }
+
+    .hero-content {
+        color: #000;
+    }
+
+    .section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
+
+    .achievement-card,
+    .value-card,
+    .package-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* Focus Management for Accessibility */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link:hover::after,
+    .achievement-card:hover,
+    .value-card:hover,
+    .gallery-item:hover {
+        transform: none;
+    }
+
+    .gallery-overlay {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .cta-button:hover,
+    .submit-button:hover {
+        transform: none;
+    }
+}
+
+/* Vision Alignment Responsive Styles */
+@media (max-width: 768px) {
+    .vision-introduction {
+        padding: 20px;
+    }
+
+    .vision-intro-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .detail-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .detail-icon {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    .detail-title {
+        font-size: 1rem;
+    }
+
+    .detail-text {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(auto-fit, minwidth(150px, 1fr));
+        gap: 16px;
+    }
+
+    .impact-item {
+        padding: 16px;
+    }
+
+    .impact-number {
+        font-size: 2rem;
+        min-width: 60px;
+    }
+}
